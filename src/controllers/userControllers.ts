@@ -68,7 +68,7 @@ export const signup = async (
       await sendEmail({
         to: email,
         subject: "Email Verification Instructions",
-        text: `Please use the following link to verify your email: https://aprtbackendnew.onrender.com/api/users/verify-email/${emailVerificationToken}`,
+        text: `Please use the following link to verify your email: https://art-u66p.onrender.com/api/users/verify-email/${emailVerificationToken}`,
       });
 
       await user.save();
@@ -103,6 +103,7 @@ export const completeSignup = async (
   next: NextFunction
 ) => {
   const { token } = req.params;
+  console.log(token);
   const hashedToken = crypto.createHash("sha256").update(token).digest("hex");
 
   const user = await User.findOne({
@@ -194,7 +195,7 @@ export const forgotPassword = async (
     await sendEmail({
       to: email,
       subject: "Password Reset Instructions",
-      text: `https://6465e9e042be2605a2ec71fd--eclectic-florentine-9c53d8.netlify.app/reset-password/${resetToken}`,
+      text: `https://aprtcease.onrender.com/reset-password/${resetToken}`,
 
     });
 
