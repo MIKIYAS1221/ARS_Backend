@@ -68,7 +68,7 @@ export const signup = async (
       await sendEmail({
         to: email,
         subject: "Email Verification Instructions",
-        text: `Please use the following link to verify your email: http://localhost:5000/api/users/verify-email/${emailVerificationToken}`,
+        text: `Please use the following link to verify your email: https://aprtbackendnew.onrender.com/api/users/verify-email/${emailVerificationToken}`,
       });
 
       await user.save();
@@ -194,7 +194,7 @@ export const forgotPassword = async (
     await sendEmail({
       to: email,
       subject: "Password Reset Instructions",
-      text: `http://localhost:5000/reset-password/${resetToken}`,
+      text: `https://6465e9e042be2605a2ec71fd--eclectic-florentine-9c53d8.netlify.app/reset-password/${resetToken}`,
 
     });
 
