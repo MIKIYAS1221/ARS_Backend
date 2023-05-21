@@ -68,7 +68,7 @@ export const signup = async (
       await sendEmail({
         to: email,
         subject: "Email Verification Instructions",
-        text: `Please use the following link to verify your email: https://art-u66p.onrender.com/api/users/verify-email/${emailVerificationToken}`,
+        text: `Please use the following link to verify your email: ${process.env.frontend}/verify-email/${emailVerificationToken}`,
       });
 
       await user.save();
@@ -195,7 +195,7 @@ export const forgotPassword = async (
     await sendEmail({
       to: email,
       subject: "Password Reset Instructions",
-      text: `https://aprtcease.onrender.com/reset-password/${resetToken}`,
+      text: `${process.env.frontend}/reset-password/${resetToken}`,
 
     });
 
